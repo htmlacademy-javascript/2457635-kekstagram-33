@@ -1,3 +1,5 @@
-import { createRandomPhotos } from './data.js';
+import './data.js';
+import './util.js';
+import {renderThumbnails} from './thumbnails.js';
 
-console.log(createRandomPhotos());
+renderThumbnails();
