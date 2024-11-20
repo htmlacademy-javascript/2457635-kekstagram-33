@@ -50,6 +50,7 @@ const onShowMoreBtnClick = () => {
   const commentsToShowCount = COMMENTS_PER_PERTION * loadingStep;
   const commentsToShow = temporaryComments.slice(0, commentsToShowCount);
   renderPictureComments(commentsToShow, temporaryComments);
+
 };
 
 const renderBigPicture = ({ url, description, likes}) => {
@@ -62,6 +63,7 @@ const renderBigPicture = ({ url, description, likes}) => {
 const clearCommentsList = () => {
   commentSection.innerHTML = "";
 };
+
 const showBigPicture = ({ url, description, likes, comments }) => {
   bigPicture.classList.remove("hidden");
   body.classList.add("modal-open");
@@ -73,6 +75,7 @@ const showBigPicture = ({ url, description, likes, comments }) => {
   document.addEventListener("keydown", onEscKeydown);
   showMoreBtn.addEventListener("click", onShowMoreBtnClick);
   userModalClosePicture.addEventListener("click", closeBigPicture);
+
 };
 
 thumbnailsList.addEventListener("click", (evt) => {
