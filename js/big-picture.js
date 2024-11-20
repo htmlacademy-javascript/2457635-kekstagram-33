@@ -7,12 +7,8 @@ const userModalClosePicture = bigPicture.querySelector(".big-picture__cancel");
 const body = document.querySelector("body");
 const commentTemplate = bigPicture.querySelector(".social__comment"); // комментарии к изображению
 const commentSection = bigPicture.querySelector(".social__comments");
-const commentsShowCount = bigPicture.querySelector(
-  ".social__comment-shown-count"
-);
-const commentsTotalCount = bigPicture.querySelector(
-  ".social__comment-total-count"
-);
+const commentsShowCount = bigPicture.querySelector(".social__comment-shown-count");
+const commentsTotalCount = bigPicture.querySelector(".social__comment-total-count");
 const showMoreBtn = bigPicture.querySelector(".comments-loader"); //Загрузить еще
 
 let loadingStep = 1;
@@ -59,12 +55,14 @@ const renderBigPicture = ({ url, description, likes}) => {
   bigPicture.querySelector(".likes-count").textContent = likes;
   bigPicture.querySelector(".social__caption").textContent = description;
 };
+
 const clearCommentsList = () => {
   commentSection.innerHTML = "";
 };
+
 const showBigPicture = ({ url, description, likes, comments }) => {
   bigPicture.classList.remove("hidden");
-  body.classList.add("modal-open");
+  document.body.classList.add("modal-open");
   renderBigPicture({ url, description, likes, comments });
   loadingStep = 1;
   temporaryComments = comments.slice(0);
@@ -73,6 +71,7 @@ const showBigPicture = ({ url, description, likes, comments }) => {
   document.addEventListener("keydown", onEscKeydown);
   showMoreBtn.addEventListener("click", onShowMoreBtnClick);
   userModalClosePicture.addEventListener("click", closeBigPicture);
+
 };
 
 thumbnailsList.addEventListener("click", (evt) => {
