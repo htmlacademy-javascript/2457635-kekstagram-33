@@ -13,13 +13,10 @@ const renderThumbnails = () => thumbnailsList.append(thumbnailsFragment); {
     thumbnailsImage.alt = description;
     thumbnail.querySelector('.picture__likes').textContent = likes;
     thumbnail.querySelector('.picture__comments').textContent = comments.length;
-
     thumbnail.addEventListener('click', () => {
       showBigPicture({url, description, likes, comments});
     });
-
     thumbnailsFragment.append(thumbnail);
-
   });
   thumbnailsList.append(thumbnailsFragment);
 }

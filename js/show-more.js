@@ -1,8 +1,6 @@
 const showMore = document.querySelector('.comments-loader'); //Загрузить еще
 const comment = document.querySelectorAll('.social__comment').length; // комментарии к изображению
-
 const SHOW_COMMENTS = 5;
-
 showMore.addEventListener('click', () => {
   SHOW_COMMENTS += 5;
   const array = Array.from(document.querySelector('.social__comments').children);
